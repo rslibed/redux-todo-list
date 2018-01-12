@@ -7,9 +7,10 @@ import { connect } from 'react-redux';
 class AddForm extends Component {
     handleAddItem (values) {
         console.log('Form submitted with: ', values);
-        this.props.addItem(values);
+        this.props.addItem(values).then( () => {
+            this.props.history.push('/');
+        });
         console.log(this.props.history);
-        this.props.history.push('/');
     }
     renderInput ({label, input, meta: { touched, error }}) {
         // console.log('Render input: ', info);
