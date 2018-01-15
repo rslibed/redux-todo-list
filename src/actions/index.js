@@ -27,3 +27,25 @@ export function getSingleItem (id) {
         payload: request
     }
 }
+
+export function deleteSingleItem (id) {
+    const request = axios.delete(BASE_URL + '/todos/' + id + API_KEY)
+    return {
+        type: types.DELETE_SINGLE_ITEM,
+        payload: request
+    }
+}
+
+export function toggleDeleteModal (toggleDelete) {
+    console.log("TOGGLE DELETE VALUE: ", toggleDelete)
+    let displayValue = toggleDelete;
+    if (displayValue === 'none') {
+        displayValue = 'block';
+    } else {
+        displayValue = 'none';
+    }
+    return {
+        type: types.TOGGLE_DELETE_MODAL,
+        payload: displayValue
+    }
+}
