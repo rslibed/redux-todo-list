@@ -1,7 +1,10 @@
 import types from '../actions/types';
 const DEFAULT_STATE = {
     list: [],
-    single: null
+    single: null,
+    deleteDisplayValue: {
+        display: 'none'
+    }
 };
 
 export default function (state = DEFAULT_STATE, action) {
@@ -12,6 +15,14 @@ export default function (state = DEFAULT_STATE, action) {
         case types.GET_SINGLE_ITEM: 
             console.log("GET SINGLE ITEM: ", action);
             return { ...state, single: action.payload.data.todo };
+        case types.DELETE_SINGLE_ITEM: 
+            return {
+                ...state, single: action.payload.data.todo
+            }
+        case types.TOGGLE_DELETE_MODAL: 
+            return {
+                ...state, deleteDisplayValue: { display: action.payload }
+            }
         default: 
             return state;
     }

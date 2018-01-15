@@ -6,14 +6,11 @@ import { connect } from 'react-redux';
 
 class AddForm extends Component {
     handleAddItem (values) {
-        console.log('Form submitted with: ', values);
         this.props.addItem(values).then( () => {
             this.props.history.push('/');
         });
-        console.log(this.props.history);
     }
     renderInput ({label, input, meta: { touched, error }}) {
-        // console.log('Render input: ', info);
         return (
             <div className="form-group">
                 <label>{label}</label>
@@ -23,7 +20,6 @@ class AddForm extends Component {
         )
     }
     render () {
-        // console.log('Add form props: ', this.props)
         return (
             <div>
                 <div className="row my-4 justify-content-end">
