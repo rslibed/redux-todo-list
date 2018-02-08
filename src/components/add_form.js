@@ -5,6 +5,9 @@ import { addItem } from '../actions';
 import { connect } from 'react-redux';
 
 class AddForm extends Component {
+    constructor(props) {
+        super(props)
+    }
     handleAddItem (values) {
         this.props.addItem(values).then( () => {
             this.props.history.push('/');
