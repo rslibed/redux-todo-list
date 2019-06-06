@@ -15,7 +15,7 @@
     "url": "https://github.com/rslibed/redux-todo-list.git"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.0.0-beta.3",
     "react": "^15.6.1",
